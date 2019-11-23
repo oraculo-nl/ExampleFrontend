@@ -1,11 +1,13 @@
 
-<table>
-    <tr>
+<table border="1">
+    <tr >
         <th>Albumnaam</th>
         <th>Artiest</th>
         <th>Jaar</th>
     </tr>
-    <tr>
-        <td></td>
+    <tr *ngFor="let album of albums">
+        <td>{{album.naam}}</td>
+        <td>{{album.artiest}}</td>
+        <td>{{album.jaar}}</td>
     </tr>
 </table>

@@ -15,10 +15,14 @@ export class AlbumsComponent implements OnInit {
   constructor(private albumService: AlbumService) { }
 
   ngOnInit() {
-    this.albumService.retrieveAll().subscribe(
+  }
+
+  findByNaam() {
+    console.log(this.naam);
+    this.albumService.findByNaam(this.naam).subscribe(
       (albums: Album[]) => this.albums = albums,
       (error: HttpErrorResponse) => alert("Er is een fout opgetreden: " + error.status + " " + error.error + "\n" + "\nMessage:\n" + error.message),
-      ()=>{}
+      () => { }
     )
   }
 

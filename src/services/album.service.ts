@@ -17,4 +17,8 @@ export class AlbumService {
     return this.http.get<Album[]>(`${environment.popsongsUrl}album`);
   }
 
+  public findByNaam(naam: string):Observable<Album[]>{
+    return this.http.get<Album[]>(`${environment.popsongsUrl}album/naam/${naam}`);
+  }
+
 }

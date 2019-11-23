@@ -11,6 +11,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class AlbumsComponent implements OnInit {
 
   albums: Album[];
+  naam: string;
 
   constructor(private albumService: AlbumService) { }
 

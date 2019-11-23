@@ -18,8 +18,9 @@ export class AlbumsComponent implements OnInit {
   }
 
   findByNaam() {
-    console.log(this.naam);
-    this.albumService.findByNaam(this.naam).subscribe(
+     var naam = encodeURI(this.naam);
+    console.log(naam);
+    this.albumService.findByNaamLike(naam).subscribe(
       (albums: Album[]) => this.albums = albums,
       (error: HttpErrorResponse) => alert("Er is een fout opgetreden: " + error.status + " " + error.error + "\n" + "\nMessage:\n" + error.message),
       () => { }

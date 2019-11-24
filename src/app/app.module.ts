@@ -7,12 +7,14 @@ import { AlbumsComponent } from "./albums/albums.component";
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { AlbumComponent } from './album/album.component';
+import { NewAlbumComponent } from './albums/new-album/new-album.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlbumsComponent,
-    AlbumComponent
+    AlbumComponent,
+    NewAlbumComponent
   ],
   imports: [
     BrowserModule,

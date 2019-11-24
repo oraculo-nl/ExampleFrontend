@@ -29,4 +29,8 @@ export class AlbumService {
     return this.http.get<Album>(`${environment.popsongsUrl}album/${id}`);
   }
 
+  public create(album:Album):Observable<Album> {
+    return this.http.post<Album> (`${environment.popsongsUrl}save`, album, this.httpOptions);
+  }
+
 }

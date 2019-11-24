@@ -23,7 +23,7 @@ export class AlbumComponent implements OnInit {
         ()=>{}
       )
      }      
-      , () => { }
+      , (fout: HttpErrorResponse)=>alert("Er is een fout opgetreden: "+fout.status + " "+ fout.error+"\n"+"\nMessage:\n"+fout.message)
       , () => { }
     )
   }

@@ -1,12 +1,14 @@
+import { Artiest } from './artiest';
+
 export class Album {
 
 
     private _id: number;
     private _naam: string;
-    private _artiest: string;
+    private _artiest: Artiest;
     private _jaar: number;
 
-    constructor(id: number, naam: string, artiest: string, jaar: number) {
+    constructor(id: number, naam: string, jaar: number, artiest: Artiest) {
         this._id = id;
         this._naam = naam;
         this._artiest = artiest;
@@ -49,7 +51,7 @@ export class Album {
      * Getter artiest
      * @return {string}
      */
-    public get artiest(): string {
+    public get artiest(): Artiest {
         return this._artiest;
     }
 
@@ -57,7 +59,7 @@ export class Album {
      * Setter artiest
      * @param {string} value
      */
-    public set artiest(value: string) {
+    public set artiest(value: Artiest) {
         this._artiest = value;
     }
 

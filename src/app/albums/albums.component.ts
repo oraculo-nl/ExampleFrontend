@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlbumService } from 'src/services/album.service';
 import { Album } from 'src/domain/album';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-albums',
@@ -13,7 +14,7 @@ export class AlbumsComponent implements OnInit {
   albums: Album[];
   naam: string;
 
-  constructor(private albumService: AlbumService) { }
+  constructor(private albumService: AlbumService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -26,6 +27,11 @@ export class AlbumsComponent implements OnInit {
       (error: HttpErrorResponse) => alert("Er is een fout opgetreden: " + error.status + " " + error.error + "\n" + "\nMessage:\n" + error.message),
       () => { }
     )
+  }
+
+
+  newAlbumForm() {
+    this.router.navigate(['new-album']);
   }
 
 }

@@ -1,0 +1,27 @@
+
+<form><table>
+    <caption>
+        <h3>Nieuw Album </h3>
+    </caption>
+    <tr>
+        <td>Albumnaam: </td>
+        <td><input type="text" value='{{album.naam}}'></td>
+    </tr>
+    <tr>
+        <td>Artiest: </td>
+        <td>
+            <select>
+
+                <option *ngFor="let artiest of artiesten" [ngValue]="artiest">{{artiest.naam}}</option>
+            </select>
+
+
+        </td>
+    </tr>
+    <tr>
+        <td>Jaar: </td>
+        <td><input type="text" value='{{album.jaar}}'></td>
+    </tr>
+    <tr><td><input type="submit" value="create"></td></tr>
+</table>
+</form>

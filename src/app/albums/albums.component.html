@@ -12,7 +12,7 @@
         <th>Jaar</th>
     </tr>
     <tr *ngFor="let album of albums">
-        <td><a routerLink="album">{{album.naam}}</a></td>
+        <td><a [routerLink]="['album', album.id]">{{album.naam}}</a></td>
         <td>{{album.artiest}}</td>
         <td>{{album.jaar}}</td>
     </tr>

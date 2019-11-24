@@ -1,14 +1,33 @@
 export class Album {
+
+
+    private _id: number;
     private _naam: string;
     private _artiest: string;
     private _jaar: number;
 
-    constructor(naam: string, artiest: string, jaar: number) {
+    constructor(id: number, naam: string, artiest: string, jaar: number) {
+        this._id = id;
         this._naam = naam;
         this._artiest = artiest;
         this._jaar = jaar;
     }
 
+    /**
+  * Getter id
+  * @return {number}
+  */
+    public get id(): number {
+        return this._id;
+    }
+
+    /**
+     * Setter id
+     * @param {number} value
+     */
+    public set id(value: number) {
+        this._id = value;
+    }
 
     /**
      * Getter naam

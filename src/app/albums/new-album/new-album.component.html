@@ -1,16 +1,16 @@
 
-<form><table>
+<table>
     <caption>
         <h3>Nieuw Album </h3>
     </caption>
     <tr>
         <td>Albumnaam: </td>
-        <td><input type="text" value='{{album.naam}}'></td>
+        <td><input type="text" [(ngModel)]="naam"></td>
     </tr>
     <tr>
         <td>Artiest: </td>
         <td>
-            <select>
+            <select [(ngModel)]="selectedArtiest" (change)="select()" >
 
                 <option *ngFor="let artiest of artiesten" [ngValue]="artiest">{{artiest.naam}}</option>
             </select>
@@ -20,8 +20,7 @@
     </tr>
     <tr>
         <td>Jaar: </td>
-        <td><input type="text" value='{{album.jaar}}'></td>
+        <td><input type="text" [(ngModel)]="jaar"></td>
     </tr>
-    <tr><td><input type="submit" value="create"></td></tr>
+    <tr><td><button (click)="createAlbum()">Create</button></td></tr>
 </table>
-</form>

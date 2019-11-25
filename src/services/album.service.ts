@@ -30,7 +30,8 @@ export class AlbumService {
   }
 
   public create(album:Album):Observable<Album> {
-    return this.http.post<Album> (`${environment.popsongsUrl}save`, album, this.httpOptions);
+    console.log(JSON.stringify(album));
+    return this.http.post<Album> (`${environment.popsongsUrl}album`, album, this.httpOptions);
   }
 
 }

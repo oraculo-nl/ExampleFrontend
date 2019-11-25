@@ -79,5 +79,15 @@ export class Album {
         this._jaar = value;
     }
 
+    public toJSON()
+    {
+        return {
+            id: this.id,
+            naam: this.naam,
+            artiest: this.artiest,
+            jaar: this.jaar
+        };
+    }
+
 }
 

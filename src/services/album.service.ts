@@ -36,4 +36,8 @@ export class AlbumService {
     return this.http.post<Album> (`${environment.popsongsUrl}album`, album, this.httpOptions);
   }
 
+  public update(album:Album):Observable<Album>{
+    return this.http.put<Album> (`${environment.popsongsUrl}album`, album, this.httpOptions);
+  }
+
 }

@@ -4,7 +4,7 @@
     </caption>
     <tr>
         <td>Albumnaam: </td>
-        <td><input type="text" value='{{album.naam}}' readonly></td>
+        <td><input type="text" [(ngModel)]="album.naam"></td>
     </tr>
     <tr>
         <td>Artiest: </td>
@@ -18,6 +18,9 @@
         </td>    </tr>
     <tr>
         <td>Jaar: </td>
-        <td><input type="text" value='{{album.jaar}}' readonly></td>
+        <td><input type="text" [(ngModel)]="album.jaar"></td>
     </tr>
+    <tr><td><button (click)="updateAlbum()">Update</button></td></tr>
 </table>
+
+{{message}}

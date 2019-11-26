@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Album } from 'src/domain/album';
 import { AlbumService } from 'src/services/album.service';
+import { Album } from 'src/domain/album';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-  selector: 'app-album',
-  templateUrl: './album.component.html',
-  styleUrls: ['./album.component.css']
+  selector: 'app-update-album',
+  templateUrl: './update-album.component.html',
+  styleUrls: ['./update-album.component.css']
 })
-export class AlbumComponent implements OnInit {
-
-  album: Album;
+export class UpdateAlbumComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private albumService: AlbumService) { }
 
@@ -25,7 +23,7 @@ export class AlbumComponent implements OnInit {
      }      
       , (fout: HttpErrorResponse)=>alert("Er is een fout opgetreden: "+fout.status + " "+ fout.error+"\n"+"\nMessage:\n"+fout.message)
       , () => { }
-    )
+    )    
   }
 
 }

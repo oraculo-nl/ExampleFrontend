@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { AlbumService } from 'src/services/album.service';
 import { Album } from 'src/domain/album';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Artiest } from 'src/domain/artiest';
+import { ArtiestService } from 'src/services/artiest.service';
 
 @Component({
   selector: 'app-update-album',
@@ -11,19 +13,24 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class UpdateAlbumComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute, private albumService: AlbumService) { }
+  artiesten: Artiest[];
+  selectedArtiest: Artiest;
+  album: Album;
+  constructor(private artiestService: ArtiestService, private activatedRoute: ActivatedRoute, private albumService: AlbumService) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(
-      params => { this.albumService.findById(params['id']).subscribe(
-        (album:Album)=> {this.album=album},
-        (fout: HttpErrorResponse)=>alert("Er is een fout opgetreden: "+fout.status + " "+ fout.error+"\n"+"\nMessage:\n"+fout.message),
-        ()=>{}
-      )
-     }      
-      , (fout: HttpErrorResponse)=>alert("Er is een fout opgetreden: "+fout.status + " "+ fout.error+"\n"+"\nMessage:\n"+fout.message)
-      , () => { }
-    )    
+      params => this.album = params['album']
+    );
+    this.artiestService.retrieveAll().subscribe(
+      (artiesten: Artiest[]) => this.artiesten = artiesten,
+      (error: HttpErrorResponse) => alert("Er is een fout opgetreden: " + error.status + " " + error.error + "\n" + "\nMessage:\n" + error.message),
+      () => {
+        // console.log("artiest_id: "+this.album.artiest.id);
+        this.selectedArtiest = this.artiesten.find(artiest =>artiest.id == this.artiest_id);
+      }
+    )
+
   }
 
 }

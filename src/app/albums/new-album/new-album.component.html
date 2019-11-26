@@ -10,7 +10,7 @@
     <tr>
         <td>Artiest: </td>
         <td>
-            <select [(ngModel)]="selectedArtiest" (change)="select()" >
+            <select [(ngModel)]="selectedArtiest" (change)="select()" required >
 
                 <option *ngFor="let artiest of artiesten" [ngValue]="artiest">{{artiest.naam}}</option>
             </select>
@@ -23,4 +23,7 @@
         <td><input type="text" [(ngModel)]="jaar"></td>
     </tr>
     <tr><td><button (click)="createAlbum()">Create</button></td></tr>
+
 </table>
+
+{{message}}

@@ -16,6 +16,8 @@ export class NewAlbumComponent implements OnInit {
   selectedArtiest: Artiest;
   naam: string;
   jaar: number;
+  album: Album;
+  message: string;
   constructor(private artiestService:ArtiestService, private albumService:AlbumService) { }
 
   ngOnInit() {
@@ -29,16 +31,26 @@ console.log(this.artiesten);
   }
 
   public select() {
-    console.log("bla");
     console.log(this.selectedArtiest);
   }
 
   public createAlbum() {
-    var album:Album = new Album(null,this.naam, this.jaar, this.selectedArtiest);
-    this.albumService.create(album).subscribe(
-      (album: Album) => {},
-      (error: HttpErrorResponse) => alert("Er is een fout opgetreden: " + error.status + " " + error.error + "\n" + "\nMessage:\n" + error.message),
+    this.album = new Album(null,this.naam, this.jaar, this.selectedArtiest);
+    this.albumService.create(this.album).subscribe(
+      (album: Album) => {this.createSuccess(album)},
+      (error: HttpErrorResponse) => alert("Er is een fout opgetreden: " + error.status + " " + error.error.error + "\n" + "\nMessage:\n" + error.message),
       () => {console.log("artiesten opgehaald"); }
     )
+    
+  }
+
+  public createSuccess(album:Album) {
+    if (album.id!=null) 
+    {
+      this.naam="";
+      this.jaar=null;
+      this.selectedArtiest=null;
+      this.message="Album is aangemaakt: " + new Date().toLocaleTimeString();
+    }
   }
 }

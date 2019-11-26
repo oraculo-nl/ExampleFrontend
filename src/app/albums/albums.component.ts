@@ -17,6 +17,7 @@ export class AlbumsComponent implements OnInit {
   constructor(private albumService: AlbumService, private router: Router) { }
 
   ngOnInit() {
+    this.naam="%";
   }
 
   findByNaam() {
@@ -37,6 +38,14 @@ export class AlbumsComponent implements OnInit {
   updateAlbum(album:Album) {
     this.albumService.album=album;
     this.router.navigate(['update-album']);
+  }
+
+  deleteAlbum(album_id:number) {
+    this.albumService.delete(album_id).subscribe(
+      () => {    this.findByNaam();      },
+      (error: HttpErrorResponse) => alert("Er is een fout opgetreden: " + error.status + " " + error.error + "\n" + "\nMessage:\n" + error.message),
+      () => { }
+    )
   }
 
 }

@@ -40,4 +40,8 @@ export class AlbumService {
     return this.http.put<Album> (`${environment.popsongsUrl}album`, album, this.httpOptions);
   }
 
+  public delete(album_id:number):Observable<{}> {
+    return this.http.delete(`${environment.popsongsUrl}album/${album_id}`, this.httpOptions);
+  }
+
 }

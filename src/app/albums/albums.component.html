@@ -1,9 +1,9 @@
 <button (click)="newAlbumForm()">Nieuw Album</button>
 <h1>Albums</h1>
 <br>
-(Use "%" as wildcard)
+Search album: (Use "%" as wildcard)
 <br>    
-<input type="text" [(ngModel)]='naam' placeholder="Search album">
+<input type="text" [(ngModel)]='naam'>
 <button (click)="findByNaam()">Search</button>
 <br>
 <br>
@@ -17,6 +17,7 @@
         <td><a [routerLink]="" (click)="updateAlbum(album)" >{{album.naam}}</a></td>
         <td>{{album.artiest.naam}}</td>
         <td>{{album.jaar}}</td>
+        <td><button class="smallFont" (click)="deleteAlbum(album.id)">Delete</button></td>
     </tr>
 </table>
 <br>

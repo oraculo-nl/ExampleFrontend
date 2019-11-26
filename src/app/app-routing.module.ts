@@ -14,7 +14,7 @@ const routes: Routes = [
     path: "new-album", component: NewAlbumComponent
   },
   {
-    path: "update-album/:album", component: UpdateAlbumComponent
+    path: "update-album", component: UpdateAlbumComponent
   }
 ];
 

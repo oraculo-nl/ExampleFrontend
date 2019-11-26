@@ -14,7 +14,7 @@
         <th>Jaar</th>
     </tr>
     <tr *ngFor="let album of albums">
-        <td><a [routerLink]="['/update-album',album.id]" >{{album.naam}}</a></td>
+        <td><a [routerLink]="" (click)="updateAlbum(album)" >{{album.naam}}</a></td>
         <td>{{album.artiest.naam}}</td>
         <td>{{album.jaar}}</td>
     </tr>

@@ -19,15 +19,13 @@ export class UpdateAlbumComponent implements OnInit {
   constructor(private artiestService: ArtiestService, private activatedRoute: ActivatedRoute, private albumService: AlbumService) { }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(
-      params => this.album = params['album']
-    );
+    this.album=this.albumService.album;
     this.artiestService.retrieveAll().subscribe(
       (artiesten: Artiest[]) => this.artiesten = artiesten,
       (error: HttpErrorResponse) => alert("Er is een fout opgetreden: " + error.status + " " + error.error + "\n" + "\nMessage:\n" + error.message),
       () => {
         // console.log("artiest_id: "+this.album.artiest.id);
-        this.selectedArtiest = this.artiesten.find(artiest =>artiest.id == this.artiest_id);
+        this.selectedArtiest = this.artiesten.find(artiest =>artiest.id == this.album.artiest.id);
       }
     )
 

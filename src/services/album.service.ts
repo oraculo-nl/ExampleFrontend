@@ -9,6 +9,8 @@ import { environment } from 'src/environments/environment';
 })
 export class AlbumService {
 
+  public album:Album;
+
   httpOptions = { headers: new HttpHeaders({ 'Content-type': 'application/json' }) }
 
   constructor(private http:HttpClient) { }

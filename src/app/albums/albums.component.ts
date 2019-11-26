@@ -34,4 +34,9 @@ export class AlbumsComponent implements OnInit {
     this.router.navigate(['new-album']);
   }
 
+  updateAlbum(album:Album) {
+    this.albumService.album=album;
+    this.router.navigate(['update-album']);
+  }
+
 }

@@ -25,9 +25,9 @@ console.log(this.artiesten);
     this.artiestService.retrieveAll().subscribe(
       (artiesten: Artiest[]) => this.artiesten = artiesten,
       (error: HttpErrorResponse) => alert("Er is een fout opgetreden: " + error.status + " " + error.error + "\n" + "\nMessage:\n" + error.message),
-      () => {console.log("artiesten opgehaald"); }
+      () => {console.log("artiesten opgehaald"); this.selectedArtiest=this.artiesten[0]}
     )
-    console.log(this.artiesten);    
+       
   }
 
   public select() {

@@ -4,6 +4,8 @@ import { AlbumsComponent } from "./albums/albums.component";
 import { NewAlbumComponent } from './albums/new-album/new-album.component';
 import { UpdateAlbumComponent } from './albums/update-album/update-album.component';
 import { ArtiestenComponent } from './artiesten/artiesten.component';
+import { HitsComponent } from './hits/hits.component';
+import { SongsComponent } from './songs/songs.component';
 
 
 
@@ -13,6 +15,12 @@ const routes: Routes = [
   },
   {
     path: "artiesten", component: ArtiestenComponent
+  },
+  {
+    path: "hits", component: HitsComponent  
+  },
+  {
+    path: "songs", component: SongsComponent  
   },
   {
     path: "new-album", component: NewAlbumComponent

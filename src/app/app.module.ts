@@ -9,6 +9,8 @@ import {FormsModule} from '@angular/forms';
 import { NewAlbumComponent } from './albums/new-album/new-album.component';
 import { UpdateAlbumComponent } from './albums/update-album/update-album.component';
 import { ArtiestenComponent } from './artiesten/artiesten.component';
+import { HitsComponent } from './hits/hits.component';
+import { SongsComponent } from './songs/songs.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ArtiestenComponent } from './artiesten/artiesten.component';
     AlbumsComponent,
     NewAlbumComponent,
     UpdateAlbumComponent,
-    ArtiestenComponent
+    ArtiestenComponent,
+    HitsComponent,
+    SongsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,12 @@
+<table border="1">
+    <tr >
+        <th>Hitnaam</th>
+        <th>Artiest</th>
+        <th>Album</th>
+    </tr>
+    <tr *ngFor="let hit of hits">
+        <td>{{hit.song.naam}}</td>
+        <td>{{hit.artiest.naam}}</td>
+        <td>{{hit.song.album.naam}}</td>
+    </tr>
+</table>

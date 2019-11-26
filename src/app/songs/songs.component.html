@@ -1,0 +1,14 @@
+<table border="1">
+    <tr>
+        <th>Jaar</th>
+        <th>Songnaam</th>
+        <th>Artiest</th>
+        <th>Album</th>
+    </tr>
+    <tr *ngFor="let song of songs">
+            <td>{{song.jaar}}</td>
+            <td>{{song.naam}}</td>
+        <td>{{song.artiest.naam}}</td>
+        <td>{{song.album.naam}}</td>
+    </tr>
+</table>

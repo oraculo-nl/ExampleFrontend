@@ -8,13 +8,15 @@ import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { NewAlbumComponent } from './albums/new-album/new-album.component';
 import { UpdateAlbumComponent } from './albums/update-album/update-album.component';
+import { ArtiestenComponent } from './artiesten/artiesten.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlbumsComponent,
     NewAlbumComponent,
-    UpdateAlbumComponent
+    UpdateAlbumComponent,
+    ArtiestenComponent
   ],
   imports: [
     BrowserModule,

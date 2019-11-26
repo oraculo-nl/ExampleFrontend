@@ -3,12 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { AlbumsComponent } from "./albums/albums.component";
 import { NewAlbumComponent } from './albums/new-album/new-album.component';
 import { UpdateAlbumComponent } from './albums/update-album/update-album.component';
+import { ArtiestenComponent } from './artiesten/artiesten.component';
 
 
 
 const routes: Routes = [
   {
     path: "albums", component: AlbumsComponent
+  },
+  {
+    path: "artiesten", component: ArtiestenComponent
   },
   {
     path: "new-album", component: NewAlbumComponent
